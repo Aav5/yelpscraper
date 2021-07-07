@@ -20,7 +20,11 @@ import pandas as pd
 base_url = "https://www.yelp.com/search?find_desc=Black%20Owned%20Restaurants&find_loc=seattle%2C%20wa&start="
 
 # Creates a bot with a browser driver. The bot helps automate data collection.
-bot = webdriver.Chrome(executable_path="assets/chromedriver")
+# bot = webdriver.Chrome(executable_path="assets/chromedriver")
+
+BotPath = "C:\workspace\chromedriver.exe"
+# bot = webdriver.Chrome(executable_path="assets/chromedriver.exe")
+bot = webdriver.Chrome(executable_path=BotPath)
 
 # Create a csv file to store the structured data after processing.
 csvfile = open("assets/black_restaurant_data.csv", "w", newline='', encoding="utf-8")
