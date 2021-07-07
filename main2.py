@@ -14,8 +14,8 @@ from selenium.webdriver.chrome.options import Options
 options = Options()
 # options.add_argument("window-size=1400,1000")
 options.add_argument("--start-maximized")
-city = "tacoma"
-state = "wa"
+city = "phoenix"
+state = "az"
 # This is the base url for extracting information
 base_url = "https://www.yelp.com/search?find_desc=Black%20Owned%20Restaurants&find_loc=" + city + "%2C%20" + state + "&start="
 
@@ -60,7 +60,8 @@ for i in range(pageNum):
 
         name = restaurant.find('a', class_='css-166la90').text
         features = restaurant.find('p', class_='css-1j7sdmt').text
-        landline =  restaurant.find('p', class_='css-8jxw1i').text
+        if restaurant.find('p', class_='css-8jxw1i') != None:
+            landline =  restaurant.find('p', class_='css-8jxw1i').text
         if restaurant.find('address') != None:
             address = restaurant.find('address').text
         else:
