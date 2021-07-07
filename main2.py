@@ -14,7 +14,7 @@ from selenium.webdriver.chrome.options import Options
 options = Options()
 # options.add_argument("window-size=1400,1000")
 options.add_argument("--start-maximized")
-city = "seattle"
+city = "tacoma"
 state = "wa"
 # This is the base url for extracting information
 base_url = "https://www.yelp.com/search?find_desc=Black%20Owned%20Restaurants&find_loc=" + city + "%2C%20" + state + "&start="
@@ -40,7 +40,7 @@ pageNum = int(soup.find('div', class_='border-color--default__09f24__1eOdn text-
 for i in range(pageNum):
     if i != 0:
         time.sleep(8)
-        bot.get('https://www.yelp.com/search?find_desc=Black%20Owned%20Restaurants&find_loc=seattle%2C%20wa&start=' + str(i*10))
+        bot.get(base_url + str(i*10))
         soup = BeautifulSoup(bot.page_source, 'html.parser')
     # helps get the individual pages of restaurant name and adds it to the yelp website url
     restaurants = soup.find_all('div', class_='container__09f24__21w3G hoverable__09f24__2nTf3 margin-t3__09f24__5bM2Z margin-b3__09f24__1DQ9x padding-t3__09f24__-R_5x padding-r3__09f24__1pBFG padding-b3__09f24__1vW6j padding-l3__09f24__1yCJf border--top__09f24__8W8ca border--right__09f24__1u7Gt border--bottom__09f24__xdij8 border--left__09f24__rwKIa border-color--default__09f24__1eOdn')
