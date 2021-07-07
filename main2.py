@@ -14,8 +14,8 @@ from selenium.webdriver.chrome.options import Options
 options = Options()
 # options.add_argument("window-size=1400,1000")
 options.add_argument("--start-maximized")
-city = "phoenix"
-state = "az"
+city = "New York"
+state = "NY"
 # This is the base url for extracting information
 base_url = "https://www.yelp.com/search?find_desc=Black%20Owned%20Restaurants&find_loc=" + city + "%2C%20" + state + "&start="
 
@@ -33,13 +33,13 @@ bot.get(base_url + str(0))
 # Create a document object model (DOM) from the raw source of the crawled web page.
 # Since we are processing a html page, 'html.parser' is chosen.
 soup = BeautifulSoup(bot.page_source, 'html.parser')
-time.sleep(8)
+time.sleep(5)
 
 pageNum = int(soup.find('div', class_='border-color--default__09f24__1eOdn text-align--center__09f24__1P1jK').text.split(" ")[2])
 
 for i in range(pageNum):
     if i != 0:
-        time.sleep(8)
+        time.sleep(5)
         bot.get(base_url + str(i*10))
         soup = BeautifulSoup(bot.page_source, 'html.parser')
     # helps get the individual pages of restaurant name and adds it to the yelp website url
