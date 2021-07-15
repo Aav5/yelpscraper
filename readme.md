@@ -11,6 +11,6 @@ takeout services
 # Running the Program
 
 Makes sure to add the python libraries before running the code. The libraries used
-in the project were selenium, BeautifulSoup4, time, sqlite3
+in the project were Selenium, BeautifulSoup4, Time, Sqlite3
 
 ### Special thanks to Bo Zhao
