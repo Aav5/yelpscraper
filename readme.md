@@ -1,4 +1,4 @@
-# scrapping black owned restaurant from yelp's server
+# Scrapping black owned restaurant from yelp's server
 
 In this research project, I have practiced scrapping data from yelp website
 about black owned restaurants using python web crawler. The projects gets useful
